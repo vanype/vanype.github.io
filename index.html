@@ -159,6 +159,26 @@
   footer{padding:60px 0 50px;color:var(--dim);font-size:14px;font-family:var(--mono)}
   footer .wrap{border-top:1px solid var(--line);padding-top:26px}
 
+  /* skills v2 */
+  .skills-dev{display:grid;gap:18px}
+  @media(min-width:760px){.skills-dev{grid-template-columns:1fr 1fr}}
+  .card.dev{padding:32px;min-height:220px;background:linear-gradient(150deg,rgba(124,92,255,.12),rgba(18,18,26,.78) 50%)}
+  .card.dev h3{font-size:clamp(21px,2.4vw,26px);margin-bottom:8px}
+  .card.dev li{color:#dfe0ea}
+  .tags.big .tag{font-size:13.5px;padding:7px 14px;color:#e4dfff;border-color:rgba(124,92,255,.3);background:rgba(124,92,255,.08)}
+  .card.also{margin-top:18px;padding:20px 24px;background:rgba(14,14,20,.5)}
+  .card.also h3{font-size:14px;font-family:var(--mono);font-weight:500;text-transform:uppercase;letter-spacing:.05em;color:var(--dim);margin-bottom:8px}
+  .card.also p{margin:0;font-size:14.5px;color:var(--muted)}
+  /* compact experience */
+  .timeline.compact{gap:12px}
+  @media(min-width:900px){.timeline.compact{grid-template-columns:1fr 1fr;padding-left:0}.timeline.compact::before,.timeline.compact .tl-item::before{display:none}}
+  .timeline.compact .card{padding:20px 24px;height:100%}
+  .timeline.compact .card h3{font-size:16.5px}
+  .timeline.compact .card .meta{margin-bottom:8px}
+  .timeline.compact .card p{font-size:14.5px;margin:0;color:var(--muted)}
+  .timeline.compact .tl-item::before{top:24px}
+  section#projects{padding-top:72px}
+
   /* ---------- reveal (AnimatedContent / BlurText) ---------- */
   .js .reveal{opacity:0;transform:translateY(28px);filter:blur(8px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1),filter .8s;transition-delay:var(--d,0s)}
   .js .reveal.in{opacity:1;transform:none;filter:none}
@@ -192,7 +212,7 @@
 
 <nav id="nav"><div class="pill">
   <b>Ислам Баймульдин</b>
-  <a href="#about">Кто я</a><a href="#skills">Навыки</a><a href="#experience">Опыт</a><a href="#projects">Проекты</a><a href="#contacts">Контакты</a>
+  <a href="#about">Кто я</a><a href="#projects">Проекты</a><a href="#skills">Навыки</a><a href="#experience">Опыт</a><a href="#contacts">Контакты</a>
 </div></nav>
 
 <!-- ===== КТО Я ===== -->
@@ -215,85 +235,9 @@
 
 <main class="wrap">
 
-<!-- ===== НАВЫКИ ===== -->
-<section id="skills">
-  <div class="sec-head reveal"><span class="sec-num" aria-hidden="true">01</span><h2>Что умею</h2></div>
-  <div class="grid two">
-    <div class="card spotlight reveal">
-      <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div>
-      <h3>Компьютеры и сети</h3>
-      <ul>
-        <li>Собираю и разбираю ПК, диагностирую железо</li>
-        <li>Ставлю и переустанавливаю Windows, драйверы, нужный софт; работаю в Linux</li>
-        <li>Подключаю принтеры, сканеры и другую периферию</li>
-        <li>Обжимаю RJ-45, прокладываю кабель, настраиваю Wi-Fi и роутеры, ищу сетевые проблемы</li>
-        <li>Резервное копирование и антивирусная защита</li>
-      </ul>
-    </div>
-    <div class="card spotlight reveal" style="--d:.08s">
-      <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-      <h3>Поддержка пользователей и 1С</h3>
-      <ul>
-        <li>Принимаю обращения и довожу их до решения</li>
-        <li>Устанавливаю и обновляю 1С, помогаю людям в ней работать</li>
-        <li>Microsoft Office: Word, Excel</li>
-        <li>Объясняю технические вещи без жаргона</li>
-      </ul>
-    </div>
-    <div class="card spotlight reveal">
-      <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6l-6 6 6 6M16 6l6 6-6 6M14 4l-4 16"/></svg></div>
-      <h3>Разработка</h3>
-      <ul>
-        <li>JavaScript, Node.js, Express</li>
-        <li>React, Vite, Tailwind CSS, Bootstrap, HTML/CSS</li>
-        <li>Python: Telegram-боты, интеграции с AI-моделями</li>
-        <li>Git, деплой на Railway, Docker</li>
-      </ul>
-    </div>
-    <div class="card spotlight reveal" style="--d:.08s">
-      <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 4.6L18.5 9.5l-4.6 1.9L12 16l-1.9-4.6L5.5 9.5l4.6-1.9z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></div>
-      <h3>Базы данных и AI</h3>
-      <ul>
-        <li>PostgreSQL, MySQL, SQLite: схемы, миграции, запросы</li>
-        <li>ChatGPT, OpenAI Codex, Gemini — для разработки, анализа и поиска решений</li>
-        <li>Подключаю AI-модели к своим продуктам (Gemini, OpenRouter)</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- ===== ОПЫТ ===== -->
-<section id="experience">
-  <div class="sec-head reveal"><span class="sec-num" aria-hidden="true">02</span><h2>Опыт</h2></div>
-  <div class="timeline">
-    <div class="tl-item reveal"><div class="card spotlight">
-      <h3>Astana International University — IT-практика</h3>
-      <p class="meta">Астана ·</p>
-      <p>Был «первой линией» для преподавателей и сотрудников университета: если что-то не работает, звали меня. Диагностировал и чинил компьютеры, переустанавливал Windows, ставил драйверы и программы, настраивал принтеры и сканеры. Прокладывал и подключал сетевые кабели, работал с локальной сетью и сетевым оборудованием.</p>
-    </div></div>
-    <div class="tl-item reveal"><div class="card spotlight">
-      <h3>IT Balance — техподдержка и 1С</h3>
-      <p class="meta">Кокшетау ·</p>
-      <p>Принимал обращения пользователей 1С, ставил и настраивал систему для новых клиентов, обновлял ПО и помогал разбираться в работе программы. Участвовал в разработке дополнительного модуля под требования организации-клиента.</p>
-    </div></div>
-    <div class="tl-item reveal"><div class="card spotlight">
-      <h3>Общественное питание</h3>
-      <p class="meta">4 года ·</p>
-      <p>Четыре года постоянной работы с людьми в режиме высокой нагрузки. Отсюда привычка быстро разбираться в ситуации, держать процесс под контролем и не теряться, когда всё срочно.</p>
-    </div></div>
-  </div>
-
-  <h2 class="sub reveal">Образование</h2>
-  <div class="card spotlight reveal" style="--glow:62,230,196">
-    <h3>Колледж менеджмента и бизнеса</h3>
-    <p class="meta">Астана · 2022–2025</p>
-    <p>Специальность «Разработчик программного обеспечения».</p>
-  </div>
-</section>
-
 <!-- ===== ПРОЕКТЫ ===== -->
 <section id="projects">
-  <div class="sec-head reveal"><span class="sec-num" aria-hidden="true">03</span><h2>Проекты</h2></div>
+  <div class="sec-head reveal"><span class="sec-num" aria-hidden="true">01</span><h2>Проекты</h2></div>
   <div class="projects">
 
     <!-- ETCS / NOVA KPI: приватный репозиторий vanype/ETCS -->
@@ -361,6 +305,74 @@
       <div class="foot"><p><a class="link" href="https://github.com/vanype/Fungeon" target="_blank" rel="noopener">Код на GitHub →</a></p></div>
     </article>
 
+  </div>
+</section>
+
+<!-- ===== НАВЫКИ ===== -->
+<section id="skills">
+  <div class="sec-head reveal"><span class="sec-num" aria-hidden="true">02</span><h2>Что умею</h2></div>
+  <div class="skills-dev">
+    <div class="card spotlight dev reveal">
+      <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01"/></svg></div>
+      <h3>Фронтенд</h3>
+      <div class="tags big"><span class="tag">React</span><span class="tag">Vite</span><span class="tag">Tailwind CSS</span><span class="tag">Bootstrap</span><span class="tag">HTML/CSS</span><span class="tag">JavaScript</span></div>
+    </div>
+    <div class="card spotlight dev reveal" style="--d:.08s;--glow:62,230,196">
+      <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></div>
+      <h3>Бэкенд и базы данных</h3>
+      <ul>
+        <li>JavaScript, Node.js, Express</li>
+        <li>PostgreSQL, MySQL, SQLite: схемы, миграции, запросы</li>
+        <li>Git, деплой на Railway, Docker</li>
+      </ul>
+    </div>
+    <div class="card spotlight dev reveal" style="--glow:255,122,217">
+      <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 4.6L18.5 9.5l-4.6 1.9L12 16l-1.9-4.6L5.5 9.5l4.6-1.9z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></div>
+      <h3>AI в разработке</h3>
+      <ul>
+        <li>ChatGPT, OpenAI Codex, Gemini — для разработки, анализа и поиска решений</li>
+        <li>Подключаю AI-модели к своим продуктам (Gemini, OpenRouter)</li>
+      </ul>
+    </div>
+    <div class="card spotlight dev reveal" style="--d:.08s;--glow:90,139,255">
+      <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 4.5L2.5 11.8l6.2 2.1 2.3 6.6 3.4-4.3 4.9 3.6z"/><path d="M8.7 13.9l9.3-6.8"/></svg></div>
+      <h3>Telegram-боты и Mini Apps</h3>
+      <ul>
+        <li>Python: Telegram-боты, интеграции с AI-моделями</li>
+        <li>Telegram Mini Apps</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card spotlight also reveal">
+    <h3>Также умею: IT-инфраструктура и поддержка</h3>
+    <p>Собираю и диагностирую ПК, ставлю Windows, драйверы и софт, работаю в Linux. Подключаю периферию, обжимаю RJ-45, настраиваю Wi-Fi и роутеры. Резервное копирование и антивирусная защита. Поддержка пользователей и 1С, Microsoft Office.</p>
+  </div>
+</section>
+
+<!-- ===== ОПЫТ ===== -->
+<section id="experience">
+  <div class="sec-head reveal"><span class="sec-num" aria-hidden="true">03</span><h2>Опыт</h2></div>
+  <div class="timeline compact">
+    <div class="tl-item reveal"><div class="card spotlight">
+      <h3>Astana International University — IT-практика</h3>
+      <p class="meta">Астана ·</p>
+      <p>«Первая линия» для преподавателей и сотрудников университета: компьютеры, Windows, драйверы и программы, принтеры и сканеры, сетевые кабели и локальная сеть.</p>
+    </div></div>
+    <div class="tl-item reveal"><div class="card spotlight">
+      <h3>IT Balance — техподдержка и 1С</h3>
+      <p class="meta">Кокшетау ·</p>
+      <p>Поддержка пользователей 1С, установка и настройка системы для новых клиентов, обновление ПО. Участвовал в разработке дополнительного модуля под требования организации-клиента.</p>
+    </div></div>
+    <div class="tl-item reveal"><div class="card spotlight">
+      <h3>Общественное питание</h3>
+      <p class="meta">4 года ·</p>
+      <p>Четыре года постоянной работы с людьми в режиме высокой нагрузки.</p>
+    </div></div>
+    <div class="tl-item edu reveal"><div class="card spotlight" style="--glow:62,230,196">
+      <h3>Колледж менеджмента и бизнеса</h3>
+      <p class="meta">Образование · Астана · 2022–2025</p>
+      <p>Специальность «Разработчик программного обеспечения».</p>
+    </div></div>
   </div>
 </section>
 
